@@ -1,0 +1,15 @@
+<nav class="navbar">
+  <div class="nav-brand">MyApp</div>
+
+  <ul class="nav-links">
+    <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+
+    @if (isLoggedIn()) {
+      <li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
+      <li><a routerLink="/settings" routerLinkActive="active">Settings</a></li>
+      <li><button class="btn-auth" (click)="logout()">Logout</button></li>
+    } @else {
+      <li><button routerLink="/login" class="btn-auth">Login</button></li>
+    }
+  </ul>
+</nav>
